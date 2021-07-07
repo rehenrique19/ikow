@@ -1,0 +1,66 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "iknow",
+        "description": "iknow - swagger",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:4600",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "usuario",
+            "description": "API - usuarios"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/usuario": {
+            "post": {
+                "tags": [
+                    "Usuario"
+                ],
+                "description": "Adiciona usuario",
+                "parameters": [
+                    {
+                        "name": "usuario",
+                        "in": "body",
+                        "description": "Usuario que sera criado"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Usuario criado"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Usuario": {
+            "required": [
+                "nome"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

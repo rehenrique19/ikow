@@ -1,0 +1,48 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/theming";
+@import "./assets/styles/var";
+@include mat-core();
+@include angular-material-theme($dynamic-app-theme);
+@include angular-material-typography($dynamic-typography);
+$accent: map-get($dynamic-app-theme, accent);
+$primary: map-get($dynamic-app-theme, primary);
+
+html,
+body {
+  height: 100%;
+  background-color: mat-color($accent) !important;
+}
+
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  color: mat-color($accent) !important
+}
+
+.accent-color {
+  color: mat-color($accent) !important;
+}
+.primary-color {
+  color: mat-color($primary) !important;
+}
+
+.background-accent-color {
+  background-color: mat-color($accent) !important;;
+}
+
+.background-primary-color {
+  background-color: mat-color($primary) !important;;
+}
+
+.font-color {
+  color: #A9A9A9
+}
+
+.font-size-24 {
+  font-size: 24px;
+}
+
+.click {
+  cursor: pointer;
+}
