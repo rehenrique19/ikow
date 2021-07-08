@@ -25,6 +25,7 @@ export class AuthService {
   singnWithGoogle(){
     this.googleService.signIn(GoogleLoginProvider.PROVIDER_ID);
     this.googleService.authState.subscribe((user)=>{
+      console.log(user);
       this.user = user;
     })
   }
