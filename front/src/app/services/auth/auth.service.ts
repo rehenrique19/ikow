@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { UsuarioDto } from 'src/app/models/dto/usuario.dto';
+import { UserDto } from 'src/app/models/dto/user.dto';
 import { environment } from 'src/environments/environment';
 import { SocialAuthService, SocialUser, GoogleLoginProvider } from 'angularx-social-login';
 
@@ -34,11 +34,11 @@ export class AuthService {
     this.googleService.signOut();
   }
 
-  autenticar(usuario: UsuarioDto) {
+  autenticar(usuario: UserDto) {
     return this.authenticate(environment.api.baseUrl + 'Auth', usuario);
   }
 
-  private authenticate(virtualPath: string, usuario: UsuarioDto) {
+  private authenticate(virtualPath: string, usuario: UserDto) {
     return this.httpClient
       .post(
         virtualPath,
@@ -52,11 +52,11 @@ export class AuthService {
       }));
   }
 
-  setLoggedUser(userDto: UsuarioDto) {
+  setLoggedUser(userDto: UserDto) {
     window.localStorage.setItem(this.key, JSON.stringify(userDto));
   }
 
-  getLoggedUser(): UsuarioDto {
+  getLoggedUser(): UserDto {
     return JSON.parse(window.localStorage.getItem(this.key)!);
   }
 

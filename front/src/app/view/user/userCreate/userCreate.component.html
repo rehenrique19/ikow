@@ -1,0 +1,41 @@
+<div class="grid">
+  <mat-card class="container">
+    <form [formGroup]="userCreateForm" (submit)="saveUser()">
+      <div class="row">
+        <mat-form-field appearance="outline">
+          <mat-label>Nome</mat-label>
+          <input matInput formControlName="name">
+          <mat-error *ngIf="(userCreateForm.get('name')!.errors?.required) && userCreateForm.get('name')!.touched">
+            Campo Obrigatório
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+          <mat-error *ngIf="(userCreateForm.get('email')!.errors?.required) && userCreateForm.get('email')!.touched">
+            Campo Obrigatório
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <mat-select formControlName="role">
+              <mat-option *ngFor="let role of roles" [value]="role.id">
+                {{role.descricao}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="(userCreateForm.get('role')!.errors?.required) && userCreateForm.get('role')!.touched">
+              Campo Obrigatório
+            </mat-error>
+          </mat-form-field></div>
+      </div>
+      <div class="row-save">
+        <div class="hw">
+          <button mat-raised-button color="primary" class="btn-lg fw" type="submit">Salvar</button>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+</div>

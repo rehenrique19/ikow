@@ -1,3 +1,4 @@
+import { UserCreateComponent } from './../view/user/userCreate/userCreate.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from '../view/home/home.component';
@@ -17,6 +18,13 @@ const routes: Routes = [
     component: LoginComponent,
     data: {
       title: 'Login'
+    }
+  },
+  {
+    path: 'userCreate',
+    component: UserCreateComponent,
+    data: {
+      title: 'Criar Usuário'
     }
   }
 ];

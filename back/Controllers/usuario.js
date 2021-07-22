@@ -1,4 +1,5 @@
 const baseService = require('../Services/BaseService');
+const userService = require('../Services/UserService');
 const models = require('../Database/models');
 
 module.exports = app => {
@@ -11,7 +12,7 @@ module.exports = app => {
     });
 
     app.post('/usuario', (req, res) => {
-        baseService.adiciona(req, res, models.Usuarios);
+        userService.adiciona(req, res, models.Usuarios);
     });
 
     app.post('/usuario/atualiza', (req, res) => {

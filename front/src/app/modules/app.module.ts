@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeModule } from '../view/home/home.module';
 import { AppComponent } from '../app.component';
 import { ComponentModule } from '../view/components/component.module';
+import { UserModule } from '../view/user/user.module';
 
 @NgModule({
   declarations: [
@@ -28,10 +29,11 @@ import { ComponentModule } from '../view/components/component.module';
     HttpClientModule,
     SocialLoginModule,
     FormsModule,
+    ToolbarModule,
     HomeModule,
     LoginModule,
-    ToolbarModule,
-    ComponentModule
+    ComponentModule,
+    UserModule
   ],
   providers: [
     {

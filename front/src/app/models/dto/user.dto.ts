@@ -1,11 +1,12 @@
-import { PerfilDto } from "./perfil.dto"
+import { RoleDto } from "./role.dto";
 
-export class UsuarioDto {
+
+export class UserDto {
   id: number;
   nome: string;
   email: string;
   cpf: string;
   matricula: string;
-  perfil: PerfilDto;
+  perfil: RoleDto;
   token: string;
 }
